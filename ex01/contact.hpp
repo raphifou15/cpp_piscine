@@ -13,15 +13,18 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 # include <iostream>
-# include <cstring>
 
-class contact
+class Contact
 {
-    private:
-        /* data */
     public:
-        contact(void);
-        ~contact();
+        Contact(void);
+        ~Contact(void);
+
+    void    contact();
+
+    private:
+        int _index;
+        std::string	_first_name;
 };
 
 # endif
