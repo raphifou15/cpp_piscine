@@ -20,11 +20,34 @@ class Contact
         Contact(void);
         ~Contact(void);
 
-    void    contact();
+        int     getIndex(void) const;
+        void    setIndex(int pos);
+        void    setContact(std::string *str);
+        void    getContactPartial(void) const;
+    private:
+        int             _index;
+        std::string     _firstName;
+        std::string     _LastName;
+        std::string     _Nickname;
+        std::string     _PhoneNumber;
+        std::string     _DarkestSecret;
+};
+
+class PhoneBook
+{
+    public:
+
+        PhoneBook(void);
+        ~PhoneBook(void);
+        int     getContact_index(int pos) const;
+        void    getPartial(int pos) const;
+        void    setContactIndex(int pos);
+        void    setPhoneBookContact(int pos, std::string *str);
 
     private:
-        int _index;
-        std::string	_first_name;
+        Contact _instance[8];
 };
+
+
 
 # endif
