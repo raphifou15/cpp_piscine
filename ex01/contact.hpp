@@ -24,6 +24,8 @@ class Contact
         void    setIndex(int pos);
         void    setContact(std::string *str);
         void    getContactPartial(void) const;
+        void    getContactAll(void) const;
+        
     private:
         int             _index;
         std::string     _firstName;
@@ -41,6 +43,7 @@ class PhoneBook
         ~PhoneBook(void);
         int     getContact_index(int pos) const;
         void    getPartial(int pos) const;
+        void    getAll(int pos) const;
         void    setContactIndex(int pos);
         void    setPhoneBookContact(int pos, std::string *str);
 
