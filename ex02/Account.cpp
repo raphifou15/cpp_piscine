@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <functional>
 #include <iostream>
+#include <ctime>
 #include "Account.hpp"
 
 int Account::_nbAccounts = 0;
@@ -26,13 +27,15 @@ Account::Account(int initial_deposit) : _amount(initial_deposit)
     this->_accountIndex = this->getNbAccounts();
     Account::_nbAccounts++;
     Account::_totalAmount += initial_deposit;
-    std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
+    Account::_displayTimestamp();
+    std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
     return ;
 }
 
 Account::~Account(void)
 {
-     std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
+    Account::_displayTimestamp();
+    std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
     return ;
 }
 
@@ -43,13 +46,15 @@ int Account::getNbAccounts(void)
 
 void	Account::displayAccountsInfos( void )
 {
-    std::cout << "[19920104_091532] accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
+    Account::_displayTimestamp();
+    std::cout << _nbAccounts << ";total:" << _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
     return ;
 }
 
 void    Account::displayStatus(void) const
 {
-    std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
+    Account::_displayTimestamp();
+    std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
     return ;
 }
 
@@ -65,8 +70,17 @@ void    Account::makeDeposit(int deposit)
     }
     int p_amount = this->_amount;
     this->_amount += deposit;
-     Account::_totalAmount += this->_amount;
-    std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";deposit:" <<  deposit << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits << std::endl;
+    Account::_totalAmount += this->_amount;
+    Account::_displayTimestamp();
+    std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";deposit:" <<  deposit << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits << std::endl;
+    return ;
+}
+
+void    Account::_displayTimestamp(void)
+{
+    std::time_t temp = std::time(NULL);
+    std::tm *temp_now = std::localtime(&temp);
+    std::cout << "[" << temp_now->tm_year + 1900 << temp_now->tm_mon << temp_now->tm_mday << "_" << temp_now->tm_hour << temp_now->tm_min << temp_now->tm_sec << "] ";
     return ;
 }
 
@@ -79,7 +93,8 @@ bool    Account::makeWithdrawal(int withdrawal)
     {
         Account::_totalAmount += this->_amount;
         this->_nbWithdrawals = 0;
-        std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal:refused" << std::endl;
+        Account::_displayTimestamp();
+        std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal:refused" << std::endl;
     }
     else
     {
@@ -88,7 +103,8 @@ bool    Account::makeWithdrawal(int withdrawal)
         this->_amount -= withdrawal;
         Account::_totalAmount += this->_amount;
         Account::_totalNbWithdrawals += 1;
-        std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
+        Account::_displayTimestamp();
+        std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
     }
 
     if  (this->_nbWithdrawals == 0)
