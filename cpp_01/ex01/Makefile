@@ -5,20 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/27 10:51:08 by rkhelif           #+#    #+#              #
-#    Updated: 2021/11/27 10:51:11 by rkhelif          ###   ########.fr        #
+#    Created: 2021/11/27 18:34:58 by rkhelif           #+#    #+#              #
+#    Updated: 2021/11/27 18:35:00 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = brainz
+NAME = moar_brainz
 CC = clang++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
 SRCS = main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		ZombieHorde.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
