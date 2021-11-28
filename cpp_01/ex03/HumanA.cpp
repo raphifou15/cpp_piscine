@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 11:05:54 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/11/27 11:06:17 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/11/28 15:05:53 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/11/28 15:05:56 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "HumanA.hpp"
 
-#include <iostream>
+//une refence ne peu pas pointer sur null donc obliger de le faire dans le constructor;
 
-class Zombie
+HumanA::HumanA(std::string name, Weapon &arme) : _name(name), _arme(arme) {return ;}
+
+HumanA::~HumanA(void){return ;}
+
+void    HumanA::attack(void)
 {
-    private:
-        std::string _name;
-    /* data */
-    public:
-        Zombie(std::string name);
-        ~Zombie(void);
-        void    announce(void) const;
-};
-
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
-
-#endif
+    std::cout << this->_name << " attacks with his " << this->_arme.getType() << std::endl;
+    return ;
+}
