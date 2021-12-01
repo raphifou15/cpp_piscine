@@ -13,7 +13,15 @@
 #include "Sed.hpp"
 
 Sed::~Sed(void){return ;}
-Sed::Sed(std::string path_file ,std::string s1, std::string s2): _path_file(path_file), _s1(s1), _s2(s2){return ;}
+Sed::Sed(std::string path_file ,std::string s1, std::string s2): _path_file(path_file), _s1(s1), _s2(s2)
+{
+    if(s1.empty() || s2.empty())
+    {
+        std::cout << "error empty string" << std::endl;
+        exit(0);
+    }
+    return ;
+}
 
 void    Sed::read_and_replace(void)
 {
@@ -21,7 +29,15 @@ void    Sed::read_and_replace(void)
     if (file_read.fail())
     {
         std::cout << "error le fichier n'existe pas" << std::endl;
+         std::cout << "Ou n'est pas accecible en droit" << std::endl;
         exit(1);
+    }
+    //std::fsream::peek(); reads the next character without extracting it
+    if (file_read.peek() == file_read.eof())
+    {
+        file_read.close();
+        std::cout << "file is empty" << std::endl;
+        exit(0);
     }
     std::string line;
     std::string path_2 = this->_path_file + ".replace";
