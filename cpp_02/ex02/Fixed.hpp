@@ -20,7 +20,7 @@ class Fixed
 {
     private:
         int _value;
-        static int  _value_static;
+        static const int  _value_static = 8;
     public:
         Fixed(void);
         Fixed(const Fixed &copie);

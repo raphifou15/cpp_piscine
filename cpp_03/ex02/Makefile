@@ -5,20 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/06 14:49:57 by rkhelif           #+#    #+#              #
-#    Updated: 2021/12/06 14:49:59 by rkhelif          ###   ########.fr        #
+#    Created: 2021/12/08 11:50:17 by rkhelif           #+#    #+#              #
+#    Updated: 2021/12/08 11:50:20 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME = bsp
+NAME = repetitive_work
 CC = clang++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
 SRCS = main.cpp \
-		Fixed.cpp \
-		Point.cpp \
-		bsp.cpp
-
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 .cpp.o:
@@ -36,5 +34,3 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
-
-.PHONY : all clean fclean re

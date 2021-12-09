@@ -12,8 +12,6 @@
 
 #include "Fixed.hpp"
 
-int Fixed::_value_static = 8;
-
 Fixed::Fixed(void): _value(0)
 {
     std::cout << "Default constructor called" << std::endl;

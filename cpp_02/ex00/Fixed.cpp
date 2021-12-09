@@ -12,7 +12,7 @@
 
 #include "Fixed.hpp"
 
-int Fixed::_value_static = 8;
+//int Fixed::_value_static = 8; ceci etait mon erreur lors de ma premiere correction, il fallait une static const;
 
 Fixed::Fixed(void): _value(0)
 {

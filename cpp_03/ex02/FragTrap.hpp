@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 09:53:42 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/02 09:53:52 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/09 11:49:32 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/09 11:49:37 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
 
-# include <iostream>
+# include "ClapTrap.hpp"
 
-class Fixed
+//The FragTrap class will have its construction and destruction messages
+
+class   FragTrap: public ClapTrap
 {
-    private:
-        int _value;
-        static const int  _value_static = 8;
     public:
-        Fixed(void);
-        Fixed(const Fixed &copie);
-        ~Fixed(void);
-        Fixed   &operator=(const Fixed&a);
-        int     getRawBits(void) const;
-        void    setRawBits(int const raw);
+        FragTrap(void);
+        FragTrap(std::string name);
+        FragTrap(const FragTrap&copie);
+        FragTrap    &operator=(const FragTrap&a);
+        ~FragTrap(void);
+        void highFivesGuys(void) const;
 };
 
-#endif
+# endif
