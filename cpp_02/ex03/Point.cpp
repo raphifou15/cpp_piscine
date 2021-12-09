@@ -17,7 +17,7 @@
 Point::Point(void){}
 Point::~Point(void){}
 Point::Point(const Point &copie): _x(copie._x), _y(copie._y){};
-Point::Point(const Fixed &a, const Fixed &b): _x(a), _y(b) {};
+Point::Point(const Fixed &a, const Fixed &b): _x(a), _y(b){};
 
 Point &Point::operator=(const Point&a)
 {

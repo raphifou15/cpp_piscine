@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 11:49:03 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/09 11:49:13 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/09 16:33:54 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/09 16:33:56 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-FragTrap::FragTrap(void)
+DiamondTrap::DiamondTrap(void): ClapTrap("lala_clap_name")
 {
-    this->_Hitpoints = 100;
-    this->_Energy_points = 100;
-    this->_Attack_damage = 30;
-    std::cout << "Le constructeur FragTrap a ete appeler" << std::endl;
+    std::cout << "constructeur de DiamondTrap est appeler" << std::endl;
+    this->_Name = "lala";
+    this->_Hitpoints = FRAGTRAP_HP;
+    this->_Energy_points = SCAVTRAP_EP;
+    this->_Attack_damage = FRAGTRAP_AD;
+    std::cout << "Le constructeur DiamondTrap a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -25,13 +27,14 @@ FragTrap::FragTrap(void)
     return ;
 }
 
-FragTrap::FragTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {
+    std::cout << "constructeur de DiamondTrap est appeler" << std::endl;
     this->_Name = name;
-    this->_Hitpoints = 100;
-    this->_Energy_points = 100;
-    this->_Attack_damage = 30;
-    std::cout << "Le constructeur FragTrap a ete appeler" << std::endl;
+    this->_Hitpoints = FRAGTRAP_HP;
+    this->_Energy_points = SCAVTRAP_EP;
+    this->_Attack_damage = FRAGTRAP_AD;
+    std::cout << "Le constructeur DiamondTrap a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -39,13 +42,14 @@ FragTrap::FragTrap(std::string name)
     return ;
 }
 
-FragTrap::FragTrap(const FragTrap &copie)
+DiamondTrap::DiamondTrap(const DiamondTrap&copie)
 {
+    std::cout << "constructeur de DiamondTrap par copie est appeler" << std::endl;
     this->_Name = copie._Name;
     this->_Hitpoints = copie._Hitpoints;
     this->_Energy_points = copie._Energy_points;
     this->_Attack_damage = copie._Attack_damage;
-    std::cout << "Le constructeur FragTrap par copie a ete appeler" << std::endl;
+    std::cout << "Le constructeur DiamondTrap a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -53,7 +57,7 @@ FragTrap::FragTrap(const FragTrap &copie)
     return ;
 }
 
-FragTrap    &FragTrap::operator=(const FragTrap&a) 
+DiamondTrap    &DiamondTrap::operator=(const DiamondTrap&a)
 {
     this->_Name = a._Name;
     this->_Hitpoints = a._Hitpoints;
@@ -62,17 +66,19 @@ FragTrap    &FragTrap::operator=(const FragTrap&a)
     return (*this);
 }
 
-FragTrap::~FragTrap(void)
+void        DiamondTrap::attack(std::string const &target)
 {
-    std::cout << "destructeur de FragTrap" << std::endl;
+    ScavTrap::attack(target);
+    return;
+}
+DiamondTrap::~DiamondTrap(void)  
+{
+    std::cout << "destructeur de DiamondTrap est appeler" << std::endl;
+    return ;
 }
 
-void    FragTrap::attack(std::string const &target)
+void        DiamondTrap::whoAmI(void) const
 {
-     std::cout <<"FragTrap " << this->_Name << " attaque " << target << std::endl;
-}
-
-void FragTrap::highFivesGuys(void) const
-{
-    std::cout << "high-five we won the game" << std::endl;
+    std::cout << "Le nom de DiamondTrap est " << this->_Name << " et le nom de clapTrap est " << ClapTrap::_Name << std::endl;
+    return ;
 }

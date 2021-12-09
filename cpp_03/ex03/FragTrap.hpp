@@ -15,9 +15,13 @@
 
 # include "ClapTrap.hpp"
 
+# define FRAGTRAP_HP 100
+# define FRAGTRAP_EP 100
+# define FRAGTRAP_AD 30
+
 //The FragTrap class will have its construction and destruction messages
 
-class   FragTrap: public ClapTrap
+class   FragTrap:virtual public ClapTrap
 {
     public:
         FragTrap(void);

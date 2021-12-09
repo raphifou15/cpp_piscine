@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 11:49:03 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/09 11:49:13 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/08 14:16:43 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/08 14:16:46 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap(void)
+ScavTrap::ScavTrap(void)
 {
     this->_Hitpoints = 100;
-    this->_Energy_points = 100;
-    this->_Attack_damage = 30;
-    std::cout << "Le constructeur FragTrap a ete appeler" << std::endl;
+    this->_Energy_points = 50;
+    this->_Attack_damage = 20;
+    std::cout << "Le constructeur ScavTrap a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -25,13 +25,13 @@ FragTrap::FragTrap(void)
     return ;
 }
 
-FragTrap::FragTrap(std::string name)
+ScavTrap::ScavTrap(std::string name)
 {
     this->_Name = name;
     this->_Hitpoints = 100;
-    this->_Energy_points = 100;
-    this->_Attack_damage = 30;
-    std::cout << "Le constructeur FragTrap a ete appeler" << std::endl;
+    this->_Energy_points = 50;
+    this->_Attack_damage = 20;
+    std::cout << "Le constructeur ScavTrap a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -39,13 +39,13 @@ FragTrap::FragTrap(std::string name)
     return ;
 }
 
-FragTrap::FragTrap(const FragTrap &copie)
+ScavTrap::ScavTrap(const ScavTrap &copie)
 {
     this->_Name = copie._Name;
     this->_Hitpoints = copie._Hitpoints;
     this->_Energy_points = copie._Energy_points;
     this->_Attack_damage = copie._Attack_damage;
-    std::cout << "Le constructeur FragTrap par copie a ete appeler" << std::endl;
+    std::cout << "Le constructeur ScavTrap par copie a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
     std::cout << "Energy points " << this->_Energy_points << std::endl;
@@ -53,7 +53,7 @@ FragTrap::FragTrap(const FragTrap &copie)
     return ;
 }
 
-FragTrap    &FragTrap::operator=(const FragTrap&a) 
+ScavTrap    &ScavTrap::operator=(const ScavTrap&a)
 {
     this->_Name = a._Name;
     this->_Hitpoints = a._Hitpoints;
@@ -62,17 +62,17 @@ FragTrap    &FragTrap::operator=(const FragTrap&a)
     return (*this);
 }
 
-FragTrap::~FragTrap(void)
+ScavTrap::~ScavTrap(void)
 {
-    std::cout << "destructeur de FragTrap" << std::endl;
+    std::cout << "destructeur de ScavTrap" << std::endl;
 }
 
-void    FragTrap::attack(std::string const &target)
+void    ScavTrap::attack(std::string const &target)
 {
-     std::cout <<"FragTrap " << this->_Name << " attaque " << target << std::endl;
+    std::cout <<"ScavTrapp " << this->_Name << " attaque " << target << std::endl;
 }
 
-void FragTrap::highFivesGuys(void) const
+void    ScavTrap::guardGate(void) const
 {
-    std::cout << "high-five we won the game" << std::endl;
+    std::cout << " ScavTrap have enterred in Gate keeper mode." << std::endl;
 }
