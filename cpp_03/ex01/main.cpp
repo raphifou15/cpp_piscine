@@ -18,7 +18,9 @@ int main(void)
     ClapTrap Anita("Anita");
     ScavTrap Lala;
     ScavTrap Raphael("raphael");
+    std::cout << "////////////////////////////////////////" << std::endl;
     Raphael = Lala;
+    std::cout << "/////////////////////////////////////////" << std::endl;
     ScavTrap Lolo(Raphael);
     Raphael.guardGate();
     Raphael.beRepaired(145);

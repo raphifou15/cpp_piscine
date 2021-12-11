@@ -51,6 +51,7 @@ ClapTrap    &ClapTrap::operator=(const ClapTrap&a)
     this->_Hitpoints = a._Hitpoints;
     this->_Energy_points = a._Energy_points;
     this->_Attack_damage = a._Attack_damage;
+    std::cout << "constructor par asignation de ClapTrap est appeler" << std::endl;
     return (*this);
 }
 

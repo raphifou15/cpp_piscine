@@ -39,12 +39,8 @@ ScavTrap::ScavTrap(std::string name)
     return ;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copie)
+ScavTrap::ScavTrap(const ScavTrap &copie): ClapTrap(copie)
 {
-    this->_Name = copie._Name;
-    this->_Hitpoints = copie._Hitpoints;
-    this->_Energy_points = copie._Energy_points;
-    this->_Attack_damage = copie._Attack_damage;
     std::cout << "Le constructeur ScavTrap par copie a ete appeler" << std::endl;
     std::cout << "Name " << this->_Name << std::endl;
     std::cout << "Hitpoints " << this->_Hitpoints << std::endl;
@@ -55,10 +51,7 @@ ScavTrap::ScavTrap(const ScavTrap &copie)
 
 ScavTrap    &ScavTrap::operator=(const ScavTrap&a)
 {
-    this->_Name = a._Name;
-    this->_Hitpoints = a._Hitpoints;
-    this->_Energy_points = a._Energy_points;
-    this->_Attack_damage = a._Attack_damage;
+    ClapTrap::operator=(a);
     return (*this);
 }
 
