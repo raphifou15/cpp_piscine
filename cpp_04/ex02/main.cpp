@@ -18,14 +18,13 @@
 
 int main(void)
 {
-    /*
     {
         const Animal* j = new Dog();
         const Animal* i = new Cat();
         delete j;//should not create a leak
         delete i;
     }
-    */
+	std::cout << "////////////////////////////////////" << std::endl;
     {
         Animal* j = new Dog();
         Animal* i = new Cat();
@@ -38,16 +37,8 @@ int main(void)
         delete j;//should not create a leak
         delete i;
     }
-	std::cout << "////////////////////////////////" << std::endl;
-	{
-		Dog Lala;
-		std::cout << "////////////////////////////////" << std::endl;
-		{
-			Dog tmp = Lala;
-		}
-		std::cout << "////////////////////////////////" << std::endl;
-	}
-    /*
+	
+	/*
     {
         const Animal *all[100];
 	    int	i;
@@ -85,5 +76,12 @@ int main(void)
 	    Dog pardon;
 	    pardon = test;
     }*/
+	/*
+	{
+		Animal	*i = new Animal();
+		delete i;
+		//impossible d'instancier une classe Animal.
+	}
+	*/
 	return (0);
 }

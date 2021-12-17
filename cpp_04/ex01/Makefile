@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = I_don_t_want_to_set_the_world_on_fire
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -g --std=c++98
+FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
 SRCS = main.cpp \
 		Animal.cpp \
@@ -40,3 +40,5 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
+
+.PHONY : all clean fclean re

@@ -13,12 +13,21 @@
 #include "WrongAnimal.hpp"
 // construtor, destructor ... //
 WrongAnimal::WrongAnimal(void){ std::cout << "Constructor of WrongAnimal has been called" << std::endl; return ;}
+WrongAnimal::WrongAnimal(std::string type): _type(type)
+{
+    std::cout << "Constructor of WrongAnimal has been called" << std::endl;
+    return ;
+}
 WrongAnimal::~WrongAnimal(void){ std::cout << "Destructor of WrongAnimal has been called" << std::endl; return ;}
-WrongAnimal::WrongAnimal(const WrongAnimal &copie){ (void)copie;std::cout << "Constructor of WrongAnimal by copie has been called" << std::endl; return;}
+WrongAnimal::WrongAnimal(const WrongAnimal &copie) : _type(copie._type)
+{
+    std::cout << "Constructor of WrongAnimal by copie has been called" << std::endl;
+    return;
+}
 WrongAnimal  &WrongAnimal::operator=(const WrongAnimal &a)
 {
     std::cout << "constructor WrongAnimal by assignation has been called" << std::endl;
-    (void)a;
+    this->_type = a._type;
     return (*this);
 }
 /////////////////////////////

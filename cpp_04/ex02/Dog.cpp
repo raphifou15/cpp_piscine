@@ -28,7 +28,6 @@ Dog::~Dog(void)
 Dog::Dog(const Dog &copie) : Animal(copie), _brain(new Brain(*copie._brain))
 {
     std::cout << "constructor by copie of Dog has been called" << std::endl;
-    //deep copie (copie de _type et _brain avec un nouveau brain creer)
     return ;
 }
 Dog &Dog::operator=(const Dog &a)

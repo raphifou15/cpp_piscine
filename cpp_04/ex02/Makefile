@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME =  abstract_class
 CC = clang++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
@@ -19,7 +19,8 @@ SRCS = main.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
-		WrongCat.cpp
+		WrongCat.cpp \
+		Brain.cpp
 
 
 OBJS = ${SRCS:.cpp=.o}

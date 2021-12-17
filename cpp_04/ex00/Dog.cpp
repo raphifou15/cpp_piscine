@@ -14,16 +14,15 @@
 
 Dog::Dog(void){ std::cout << "constructor of Dog has been called" << std::endl; this->_type = "Dog"; return ;}
 Dog::~Dog(void){ std::cout << "destructor of Dog has been called" << std::endl; return ;}
-Dog::Dog(const Dog &copie)
+Dog::Dog(const Dog &copie) : Animal(copie)
 {
-    this->_type = copie._type;
     std::cout << "constructor by copie of Dog has been called" << std::endl;
     return ;
 }
 Dog &Dog::operator=(const Dog &a)
 {
+    Animal::operator=(a);
     std::cout << "constructor Dog by assignation has been called" << std::endl;
-    this->_type = a._type;
     return (*this);
 }
 

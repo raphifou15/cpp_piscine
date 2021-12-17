@@ -11,39 +11,33 @@
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void): _brain(new Brain())
 {
     std::cout << "constructor of Cat has been called" << std::endl;
-    this->_brain = new Brain();
     this->_type = "Cat";
     return ;
 }
 Cat::~Cat(void)
 {
-    if (this->_brain != NULL)
-        delete  this->_brain;
+    delete this->_brain;
     std::cout << "destructor of Cat has been called" << std::endl;
     return ;
 }
-Cat::Cat(const Cat &copie)
+Cat::Cat(const Cat &copie) : Animal(copie), _brain(new Brain(*copie._brain))
 {
-    this->_brain = copie._brain;
-    this->_type = copie._type;
     std::cout << "constructor by copie of Cat has been called" << std::endl;
+    //deep copie (copie de _type et _brain avec un nouveau brain creer)
     return ;
 }
 
 Cat &Cat::operator=(const Cat &a)
 {
-    std::cout << "constructor Cat by assignation has been called" << std::endl;
-    if (this->_brain != NULL)
-    {
-        delete this->_brain;
-        this->_brain = NULL;
-    }
+    Animal::operator=(a);
+    delete this->_brain;
     this->_brain = new Brain(*a._brain);
-    this->_type = a._type;
+    std::cout << "constructor Cat by assignation has been called" << std::endl;
     return (*this);
 }
 

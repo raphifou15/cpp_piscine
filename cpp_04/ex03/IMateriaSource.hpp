@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 15:44:35 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/10 15:44:37 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/15 15:55:18 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/15 15:55:21 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef IMATERIASOURCE_H
+# define IMATERIASOURCE_H
+class IMateriaSource;
+# include "AMateria.hpp"
 
-# include "Animal.hpp"
-
-class Dog: public Animal
+class IMateriaSource
 {
     public:
-    //constructor destructor //////////////////
-        Dog(void);
-        Dog(const Dog &copie);
-        Dog &operator=(const Dog &a);
-        virtual ~Dog(void);
-    /////////////////////////////////////
-    ///function///
-        void        makeSound(void) const;
+        virtual ~IMateriaSource() {}
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

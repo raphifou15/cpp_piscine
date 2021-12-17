@@ -5,21 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/10 10:06:14 by rkhelif           #+#    #+#              #
-#    Updated: 2021/12/10 10:06:16 by rkhelif          ###   ########.fr        #
+#    Created: 2021/12/13 16:43:36 by rkhelif           #+#    #+#              #
+#    Updated: 2021/12/13 16:43:38 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = Interface_recap
 CC = clang++
-FLAGS = -Wall -Wextra -Werror --std=c++98
+FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 SRCS = main.cpp \
-		Animal.cpp \
-		Dog.cpp \
-		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp
+		 AMateria.cpp \
+		 Ice.cpp \
+		 Cure.cpp \
+		 Character.cpp \
+		 MateriaSource.cpp
+
+
 
 
 OBJS = ${SRCS:.cpp=.o}

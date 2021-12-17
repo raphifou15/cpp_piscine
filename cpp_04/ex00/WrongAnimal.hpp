@@ -24,12 +24,13 @@ class   WrongAnimal
     public:
         ///////constructor destructor/////////////////
         WrongAnimal(void);
+        WrongAnimal(std::string type);
         WrongAnimal(const WrongAnimal &copie);
         WrongAnimal  &operator=(const WrongAnimal &a);
         virtual ~WrongAnimal(void);
         /////////////////////////////////////////////
         //function///////
-        void    makeSound(void) const;
+        void    makeSound(void) const;  // mettre un virtual devant pour montrer la difference.
         std::string     getType(void) const;
         //////////////////
     protected:

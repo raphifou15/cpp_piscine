@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 15:44:35 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/10 15:44:37 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/13 22:22:57 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/13 22:22:59 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef ICE_H
+# define ICE_H
 
-# include "Animal.hpp"
+# include "AMateria.hpp"
 
-class Dog: public Animal
+class Ice: public AMateria
 {
     public:
-    //constructor destructor //////////////////
-        Dog(void);
-        Dog(const Dog &copie);
-        Dog &operator=(const Dog &a);
-        virtual ~Dog(void);
-    /////////////////////////////////////
-    ///function///
-        void        makeSound(void) const;
+        Ice(void);
+        Ice(const Ice & copie);
+        Ice &operator=(const Ice &a);
+        virtual ~Ice(void);
+        AMateria*  clone(void) const;
+        void      use(ICharacter& target);
 };
 
 #endif

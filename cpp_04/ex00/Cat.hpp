@@ -22,7 +22,7 @@ class Cat : public Animal
         Cat(void);
         Cat(const Cat &copie);
         Cat &operator=(const Cat &a);
-        ~Cat(void);
+        virtual ~Cat(void);
     // function
         void        makeSound(void) const;
 };

@@ -15,17 +15,16 @@
 
 WrongCat::WrongCat(void){ std::cout << "constructor of WrongCat has been called" << std::endl; this->_type = "WrongCat"; return ;}
 WrongCat::~WrongCat(void){ std::cout << "destructor of WrongCat has been called" << std::endl; return ;}
-WrongCat::WrongCat(const WrongCat &copie)
+WrongCat::WrongCat(const WrongCat &copie) : WrongAnimal(copie)
 {
-    this->_type = copie._type;
     std::cout << "constructor by copie of WrongCat has been called" << std::endl;
     return ;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &a)
 {
+    WrongAnimal::operator=(a);
     std::cout << "constructor WrongCat by assignation has been called" << std::endl;
-    this->_type = a._type;
     return (*this);
 }
 

@@ -13,12 +13,21 @@
 #include "Animal.hpp"
 // construtor, destructor ... //
 Animal::Animal(void){ std::cout << "Constructor of Animal has been called" << std::endl; return ;}
+Animal::Animal(std::string type) : _type(type)
+{
+    std::cout << "Constructor of Animal has been called" << std::endl;
+    return ;
+}
 Animal::~Animal(void){ std::cout << "Destructor of Animal has been called" << std::endl; return ;}
-Animal::Animal(const Animal &copie){ (void)copie;std::cout << "Constructor of Animal by copie has been called" << std::endl; return;}
+Animal::Animal(const Animal &copie) : _type(copie._type)
+{
+    std::cout << "Constructor of Animal by copie has been called" << std::endl;
+    return ;
+}
 Animal  &Animal::operator=(const Animal &a)
 {
     std::cout << "constructor Animal by assignation has been called" << std::endl;
-    (void)a;
+    this->_type = a._type;
     return (*this);
 }
 /////////////////////////////

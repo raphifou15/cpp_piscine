@@ -29,18 +29,37 @@ Une classe qui n'est pas destinée à être dérivée n'a pas à avoir de destru
 // Le mot-clé virtual permet de supplanter une fonction membre d'une classe parent depuis une classe dérivée,
 // à condition qu'elle ait la même signature
 
+
+//Une classe abstraite est une classe qui possède au moins une fonction membre virtuelle pure
+/*
+Une classe abstraite est une classe partiellement définie qui ne peut pas être instanciée.
+Il comprend (habituellement) une certaine implémentation,
+mais laisse certaines fonctions comme pure virtuelle- déclarée uniquement par leur signature.
+Les fonctions virtuelles pures ne sont pas définies dans la classe qui les déclare,
+elles doivent donc être implémentées par une sous-classe (sauf si c’est aussi une classe abstraite).
+Seule une sous-classe définissant toutes les fonctions virtuelles pures peut être instanciée.
+Le but d’une classe abstraite est de définir un comportement commun qui peut être hérité par plusieurs sous-classes,
+sans implémenter la classe entière.
+*/
+
+
+/*
+Making base class destructor virtual guarantees that the object of derived class is destructed properly,
+both base class and derived class destructors are called.
+*/
 class Animal
 {
     public:
         ///////constructor destructor/////////////////
         Animal(void);
+        Animal(std::string type);
         Animal(const Animal &copie);
-        virtual Animal  &operator=(const Animal &a);
+        Animal  &operator=(const Animal &a);
         virtual ~Animal(void);
         /////////////////////////////////////////////
         //function///////
-        virtual void    makeSound(void) const;
-        std::string     getType(void) const;
+        virtual void    makeSound(void) const = 0;
+        std::string     getType(void) const ;
         //////////////////
     protected:
         std::string _type;

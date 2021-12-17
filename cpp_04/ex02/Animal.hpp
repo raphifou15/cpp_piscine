@@ -31,8 +31,6 @@ Une classe qui n'est pas destinée à être dérivée n'a pas à avoir de destru
 
 class Animal
 {
-    protected:
-        std::string _type;
     public:
         ///////constructor destructor/////////////////
         Animal(void);
@@ -42,9 +40,11 @@ class Animal
         virtual ~Animal(void);
         /////////////////////////////////////////////
         //function///////
-        virtual void    makeSound(void) const;
+        virtual void    makeSound(void) const = 0;
         std::string     getType(void) const;
         //////////////////
+    protected:
+        std::string _type;
 };
 
 #endif
