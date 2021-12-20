@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Vous_avez_besoin_du_Form_28B_pas_28C
+NAME = Mieux_que_d_apporter_le_cafe
 CC = clang++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
@@ -20,6 +20,7 @@ SRCS = main.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

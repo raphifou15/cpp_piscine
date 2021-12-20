@@ -55,7 +55,7 @@ class Bureaucrat
        const std::string    _name;
        int                  _grade;
     public:
-        Bureaucrat(void) noexcept;
+        Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat & copie);
         Bureaucrat  &operator=(const Bureaucrat & a);

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 05:08:08 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/20 05:08:17 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/20 16:44:38 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/20 16:44:40 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  ROBOTOMYREQUESTFORM_H
-# define ROBOTOMYREQUESTFORM_H
+#ifndef PRESIDENTIALPARDONFORM_H
+# define PRESIDENTIALPARDONFORM_H
 
 # include "Form.hpp"
-# include <cstdlib>
-# include <ctime>
 
-
-class RobotomyRequestForm : public Form
+class PresidentialPardonForm : public Form
 {
     private:
         std::string _target;
     public:
-        RobotomyRequestForm(void);
-        RobotomyRequestForm(std::string target);
-        RobotomyRequestForm(const RobotomyRequestForm & a);
-        RobotomyRequestForm &operator=(const RobotomyRequestForm & a);
-        virtual ~RobotomyRequestForm(void);
+        PresidentialPardonForm(void);
+        PresidentialPardonForm(std::string target);
+        PresidentialPardonForm(const PresidentialPardonForm & copie);
+        PresidentialPardonForm   &operator=(const PresidentialPardonForm & a);
+        virtual ~PresidentialPardonForm(void);
         void    execute(Bureaucrat const & executor) const;
 };
 

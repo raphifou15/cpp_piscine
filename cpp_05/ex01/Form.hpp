@@ -27,7 +27,7 @@ class Form
         const int           _grade_to_sign;
         const int           _grade_to_exec;
     public:
-        Form(void) noexcept;
+        Form(void);
         Form(std::string name, int grade_s, int grade_e);
         Form(const Form &copie);
         Form    &operator=(const Form &a);

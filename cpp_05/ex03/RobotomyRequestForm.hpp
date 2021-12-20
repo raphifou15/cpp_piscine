@@ -17,7 +17,6 @@
 # include <cstdlib>
 # include <ctime>
 
-
 class RobotomyRequestForm : public Form
 {
     private:

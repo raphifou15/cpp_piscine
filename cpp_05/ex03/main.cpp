@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -141,6 +142,52 @@ int main(void)
 	    prez.execute(min);
 	    prez.execute(top);
 	    min.executeForm(prez);
+    }
+    std::cout << std::endl<< std::endl << "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" << std::endl << std::endl; 
+    {
+        Intern someRandomIntern;
+        Form* rrf;
+        Form* rra;
+        Form* rrb;
+        Form* rrx;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        rra = someRandomIntern.makeForm("shrubbery request", "Benda");
+        rrb = someRandomIntern.makeForm("presidentialpardon request", "Bendb");
+        rrx = someRandomIntern.makeForm("presidentialpardgfgon request", "Bendb");
+
+        std::cout << "//////////////////////////////////////////////" << std::endl;
+        Bureaucrat min = Bureaucrat("min", 149);
+	    Bureaucrat top = Bureaucrat("top", 1);
+        std::cout << "//////////////////////////////////////////////" << std::endl;
+        std::cout << "##### rra ####" << std::endl << std::endl;
+	    std::cout << *rra << std::endl;
+	    rra->execute(top);
+	    top.signForm(*rra);
+	    std::cout << *rra << std::endl;
+	    rra->execute(min);
+	    rra->execute(top);
+
+	    std::cout << "\n\n##### rrf ####" << std::endl << std::endl;
+	    std::cout << *rrf << std::endl;
+	    rrf->execute(top);
+	    top.signForm(*rrf);
+	    std::cout << *rrf << std::endl;
+	    rrf->execute(min);
+	    rrf->execute(top);
+	
+	    std::cout << "\n\n##### rrb ####" << std::endl << std::endl;
+	    std::cout << *rrb << std::endl;
+	    rrb->execute(top);
+	    top.signForm(*rrb);
+	    std::cout << *rrb << std::endl;
+	    rrb->execute(min);
+	    rrb->execute(top);
+	    min.executeForm(*rrb);
+        std::cout << "//////////////////////////////////////////////" << std::endl;
+        delete rrf;
+        delete rra;
+        delete rrb;
+        delete rrx;
     }
     return (0);
 }

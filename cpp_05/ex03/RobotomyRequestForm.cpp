@@ -53,7 +53,6 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
             throw   Form::GradeTooLowException();
         std::cout << "Sound of the the drill" << std::endl;
         std::srand(std::time(NULL)); // initialise sur le temp actuel;
-        
         if ((rand() % 2) == 0)
             std::cout << this->_target <<  " a bien été robotomizée" << std::endl;
         else
@@ -64,5 +63,3 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
         std::cerr << e.what() << std::endl;
     }
 }
-
-//srand(time(NULL));  initialise sur le temp actuel;

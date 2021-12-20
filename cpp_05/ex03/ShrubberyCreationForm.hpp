@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 05:08:08 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/12/20 05:08:17 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/12/19 20:34:54 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/12/19 20:34:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  ROBOTOMYREQUESTFORM_H
-# define ROBOTOMYREQUESTFORM_H
+#ifndef SHRUBBERYCREATIONFORM_H
+# define SHRUBBERYCREATIONFORM_H
 
 # include "Form.hpp"
-# include <cstdlib>
-# include <ctime>
-
-
-class RobotomyRequestForm : public Form
+# include <fstream>
+class ShrubberyCreationForm : public Form
 {
     private:
         std::string _target;
     public:
-        RobotomyRequestForm(void);
-        RobotomyRequestForm(std::string target);
-        RobotomyRequestForm(const RobotomyRequestForm & a);
-        RobotomyRequestForm &operator=(const RobotomyRequestForm & a);
-        virtual ~RobotomyRequestForm(void);
+        ShrubberyCreationForm(void);
+        ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(const ShrubberyCreationForm & copie);
+        ShrubberyCreationForm   &operator=(const ShrubberyCreationForm & a);
+        virtual ~ShrubberyCreationForm(void);
         void    execute(Bureaucrat const & executor) const;
 };
 

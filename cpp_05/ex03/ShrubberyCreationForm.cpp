@@ -86,6 +86,7 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         f << "   |||   " << "       " << "   |||   " << std::endl;
         f << "█████████████████████████████████████" << std::endl;
         f << "█████████████████████████████████████" << std::endl;
+        std::cout << "The form has been execute well" << std::endl;
     }
     catch(const std::exception& e)
     {

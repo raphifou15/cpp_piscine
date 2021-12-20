@@ -74,7 +74,7 @@ int main(void)
 */
 
     Bureaucrat  Lala("Lala", 76);
-    Bureaucrat  Lili("Lili", 74);
+    Bureaucrat  Lili("Lili", 75);
     Form    Raphael("raphael", 75, 75);
 
     try
@@ -85,7 +85,14 @@ int main(void)
     {
         std::cerr << e.what() << std::endl;
     }
-
+    try
+    {
+        Form    Kokoa("kokoa", 151, 75);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     Lala.signForm(Raphael);
     std::cout << Raphael << std::endl;
     Lili.signForm(Raphael);

@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Interface_recap
+NAME =  Maman_quand_je_serai_grand_je_veux_etre_bureaucrate 
 CC = clang++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
 SRCS = main.cpp \
 		Bureaucrat.cpp

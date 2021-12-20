@@ -12,7 +12,7 @@
 
 #include "Form.hpp"
 
-Form::Form(void) noexcept : _name("no_name"), _signed(0), _grade_to_sign(75), _grade_to_exec(75)
+Form::Form(void) : _name("no_name"), _signed(0), _grade_to_sign(75), _grade_to_exec(75)
 {
     std::cout << "Constructor Form has been called" << std::endl;
     return ;

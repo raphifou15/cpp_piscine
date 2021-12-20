@@ -18,7 +18,7 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void) noexcept : _name("no name"), _grade(150)
+Bureaucrat::Bureaucrat(void) : _name("no name"), _grade(150)
 {
     std::cout << "Constructor Bureaucrat has been called" << std::endl;
     return ;
