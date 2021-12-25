@@ -5,18 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/21 16:51:39 by rkhelif           #+#    #+#              #
-#    Updated: 2021/12/21 16:52:16 by rkhelif          ###   ########.fr        #
+#    Created: 2021/12/23 22:41:33 by rkhelif           #+#    #+#              #
+#    Updated: 2021/12/23 22:41:35 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Conversion_scalaire
+NAME = Iter
 CC = clang++
-FLAGS = -Wall -Wextra -Werror --std=c++98
+FLAGS = -Wall -Wextra -Werror 
 RM = rm -rf
-SRCS = main.cpp \
-		Conversion.cpp
-
+SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

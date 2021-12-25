@@ -5,18 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/21 16:51:39 by rkhelif           #+#    #+#              #
-#    Updated: 2021/12/21 16:52:16 by rkhelif          ###   ########.fr        #
+#    Created: 2021/12/23 02:53:14 by rkhelif           #+#    #+#              #
+#    Updated: 2021/12/23 02:53:18 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Conversion_scalaire
+NAME = A_few_functions
 CC = clang++
 FLAGS = -Wall -Wextra -Werror --std=c++98
 RM = rm -rf
-SRCS = main.cpp \
-		Conversion.cpp
-
+SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
